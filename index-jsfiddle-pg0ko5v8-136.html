@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSFiddle pg0ko5v8</title>
+
+  <style>
+    header {
+  text-align: center;
+  padding: 3px;
+  background: white;
+  font-size: 80px; /* bigger than core values */
+  font-weight: bold;
+  color: rgb(128, 125, 125);
+  font-family: exmouth; /* new font */
+}
+.mother-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 5px;
+  border-style: solid white;
+  margin: 0 auto;
+  width: 600px;
+  height: 340px;
+  gap: 10px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  padding: 15px;
+  border-style: solid;
+  margin: 0 auto;
+  width: 200px;
+  height: 300px;
+  gap: 10px;
+
+}
+.container1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  padding: 15px;
+  border-style: solid white;
+  margin: 0 auto;
+  width: 130px;
+  height: 300px;
+  gap: 10px;
+}
+.container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  padding: 15px;
+  border-style: solid;
+  margin: 0 auto;
+  width: 130px;
+  height: 300px;
+  gap: 10px;
+}
+.column1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  min-height: 30px;
+}
+.column2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  min-height: 30px;
+}
+.button-bar button {
+  font-size: 10px;
+  height: 20px;
+  width: 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: silver;
+  transition: 0.3s;
+}
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.drip-images {
+  width: 300px;
+  height: 200px;
+
+}
+
+  </style>
+
+  
+</head>
+<body>
+  <header>Dripenator</header>
+
+<div class="mother-box">
+  <div class="container1">
+    <div class="drip-images">
+      <img
+        src="https://i.postimg.cc/134vgXBW/New-Project.jpg">
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- COLUMN 1 -->
+    <div class="column1">
+      <img src="" />
+      <h1>1</h1>
+    </div>
+
+    <!-- COLUMN 2 -->
+    <div class="column2">
+      <img id="head" />
+
+      <img
+        src="https://i.pinimg.com/736x/6c/06/f6/6c06f66d076e20ce9aeb416062afd917.jpg"
+      />
+    </div>
+    <!-- COLUMN 3 -->
+    <div class="column1">
+      <div class="button-bar">
+        <button onclick="changeImage1()">next</button>
+      </div>
+    </div>
+
+    <!-- COLUMN 4 -->
+    <div class="column1">
+      <img src="" />
+      <h1>4</h1>
+    </div>
+
+    <!-- COLUMN 5 -->
+    <div class="column2">
+      <img id="body" />
+
+      <img src="" /><img
+        src="https://i.pinimg.com/736x/fb/82/bb/fb82bb1f123410e5297b0779073b442d.jpg"
+      />
+    </div>
+
+    <!-- COLUMN 6 -->
+    <div class="column1">
+      <div class="button-bar">
+        <button onclick="changeImage2()">next</button>
+      </div>
+    </div>
+
+    <!-- COLUMN 7 -->
+    <div class="column1">
+      <img src="" />
+      <h1>7</h1>
+    </div>
+
+    <!-- COLUMN 8 -->
+    <div class="column2">
+      <img id="lower" />
+      <img src="https://i.pinimg.com/736x/25/3f/65/253f652c81728e3bb12cc8209689463e.jpg" />
+    </div>
+
+    <!-- COLUMN 9-->
+    <div class="column1">
+      <div class="button-bar">
+                <button onclick="changeImage3()">next</button>
+      </div>
+    </div>
+
+    <!-- COLUMN 10 -->
+    <div class="column1">
+      <img src="" />
+      <h1>10</h1>
+    </div>
+
+    <!-- COLUMN 11 -->
+    <div class="column2">
+      <img id="kicks" />
+      <img src="https://i.pinimg.com/736x/47/16/60/471660e5a433236658d4ecea7271c46a.jpg" />
+    </div>
+
+    <!-- COLUMN 12 -->
+    <div class="column1">
+      <div class="button-bar">
+         <button onclick="changeImage4()">next</button>
+      </div>
+    </div>
+  </div>
+  <div class="container2">
+    <div class="button-bar">
+  <button onclick="random()">random</button>
+  </div>
+</div>
+
+
+  <script>
+    // 1. Array of image sources
+const images1 = [
+    'https://i.pinimg.com/736x/6c/06/f6/6c06f66d076e20ce9aeb416062afd917.jpg',
+    'https://i.pinimg.com/1200x/79/94/04/79940461b2cc8ba4cbd27d2a4f3a0be1.jpg',
+    'https://i.pinimg.com/1200x/89/85/0b/89850b13c350e756d69c595fe2e63894.jpg',
+    'https://i.pinimg.com/1200x/cc/b0/62/ccb062797ef8a6b5f8e3dfec1e809b8d.jpg' // Add more image names here as needed
+];
+
+// 2. Variable to track the current image index
+let currentIndex1 = 0;
+
+// 3. Function to change the image
+function changeImage1() {
+    // Get the image element by its ID
+    const imgElement = document.getElementById('head');
+    
+    // Check if we've reached the end of the array
+    if (currentIndex1 >= images1.length - 1) {
+        // If at the end, loop back to the first image
+        currentIndex1 = 0;
+    } else {
+        // Otherwise, move to the next image
+        currentIndex1++;
+    }
+    
+    // Update the src attribute of the image element
+    imgElement.src = images1[currentIndex1];
+}
+const images2 = [
+    'https://i.pinimg.com/1200x/68/70/57/687057a80cc90bfdd0206ddc42816c1c.jpg',
+    'https://i.pinimg.com/736x/c0/ef/49/c0ef49c000f63e185cb6a3377b11fa8e.jpg',
+    'https://i.pinimg.com/736x/50/6f/48/506f48c05a5f4c54052dfe5efbe61061.jpg',
+    'https://i.pinimg.com/1200x/4a/59/e9/4a59e940eb599406bd9daa647e434ede.jpg' // Add more image names here as needed
+];
+// 2. Variable to track the current image index
+let currentIndex2 = 0;
+
+// 3. Function to change the image
+function changeImage2() {
+    // Get the image element by its ID
+    const imgElement = document.getElementById('body');
+    
+    // Check if we've reached the end of the array
+    if (currentIndex2 >= images2.length - 1) {
+        // If at the end, loop back to the first image
+        currentIndex2 = 0;
+    } else {
+        // Otherwise, move to the next image
+        currentIndex2++;
+    }
+    
+    // Update the src attribute of the image element
+    imgElement.src = images2[currentIndex2];
+}
+
+const images3 = [
+    'https://i.pinimg.com/736x/f0/e1/5c/f0e15c433346cd96f5f1a3741dd88780.jpg',
+    'https://i.pinimg.com/736x/99/24/71/992471023fdf02ef2faef68d11bc073b.jpg',
+    'https://i.pinimg.com/736x/07/9c/7a/079c7a61bc96a54987b53d07fb8da475.jpg',
+    'https://i.pinimg.com/736x/6e/ea/4d/6eea4dd814bf3748bd775559e912e70d.jpg' // Add more image names here as needed
+];
+
+// 2. Variable to track the current image index
+let currentIndex3 = 0;
+
+// 3. Function to change the image
+function changeImage3() {
+    // Get the image element by its ID
+    const imgElement = document.getElementById('lower');
+    
+    // Check if we've reached the end of the array
+    if (currentIndex3 >= images3.length - 1) {
+        // If at the end, loop back to the first image
+        currentIndex3 = 0;
+    } else {
+        // Otherwise, move to the next image
+        currentIndex3++;
+    }
+    
+    // Update the src attribute of the image element
+    imgElement.src = images3[currentIndex3];
+}
+const images4 = [
+    'https://i.pinimg.com/736x/3a/54/9a/3a549a14f9f2ebda50f19d6a19f71244.jpg',
+    'https://i.pinimg.com/736x/3e/77/38/3e77387e4a4a9f599e58415f52393812.jpg',
+    'https://i.pinimg.com/1200x/f8/f7/73/f8f7737a16fb6fea1f0aff9a2a6d1d28.jpg',
+    'https://i.pinimg.com/1200x/b3/58/b8/b358b88c43afd528fa9258fd37465c2b.jpg' // Add more image names here as needed
+];
+
+// 2. Variable to track the current image index
+let currentIndex4 = 0;
+
+// 3. Function to change the image
+function changeImage4() {
+    // Get the image element by its ID
+    const imgElement = document.getElementById('kicks');
+    
+    // Check if we've reached the end of the array
+    if (currentIndex4 >= images4.length - 1) {
+        // If at the end, loop back to the first image
+        currentIndex4 = 0;
+    } else {
+        // Otherwise, move to the next image
+        currentIndex4++;
+    }
+    
+    // Update the src attribute of the image element
+    imgElement.src = images4[currentIndex4];
+}
+
+function random() {
+  const randomhead = Math.floor(Math.random() * images1.length);
+  const randombody = Math.floor(Math.random() * images2.length);
+  const randomlower = Math.floor(Math.random() * images3.length);
+  const randomkicks= Math.floor(Math.random() * images4.length);
+
+  document.getElementById("head").src = images1[randomhead];
+  document.getElementById("body").src = images2[randombody];
+  document.getElementById("lower").src = images3[randomlower];
+  document.getElementById("kicks").src = images4[randomkicks];
+
+  document.getElementById("random").addEventListener("click", random);
+  }
+
+
+  </script>
+</body>
+</html>
